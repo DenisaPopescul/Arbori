@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reprezentarea Arborilor Binari</title>
+</head>
+<body>
+<header class="header">
+  <a href="index.html" class="arbori">Arbori</a>
+  <nav class="navbar">
+    <a href="Definiție-și- proprietăți.html">Definiție și proprietăți</a>
+    <a href="Tipuri-de-arbori.html">Tipuri de arbori</a>
+    <a href="Reprezentarea-arborilor-binari.html">Reprezentarea arborilor binari</a>
+    <a href="Parcurgerea-arborilor.html">Parcurgerea arborilor</a>
+  </nav>
+</header>
+<div class="content">
+    <hr>
+    <h2 id="reprezentare">Reprezentarea arborilor binari</h2>
+    <p>Arborii binari se pot reprezenta fie prin referințe ascendente, fie prin referințe descendente, fie combinând cele două variante.</p>
+
+    <h3 id="reprezentare-ascendente">Reprezentarea prin referințe ascendente</h3>
+    <p>În cazul reprezentării prin referințe ascendente, pentru fiecare nod din arbore trebuie să se cunoască:</p>
+    <ul type="square">
+      <li>nodul părinte</li>
+      <li>ce fel de descendent este (stâng sau drept)</li>
+    </ul>
+    <p>Pentru memorarea informațiilor, considerând nodurile numerotate începând cu 1, putem folosi două tablouri: Tata[] și Tip[], unde Tata[k] reprezintă nodul părinte al lui k sau 0 dacă k este chiar rădăcina arborelui, iar Tip[k] este 0, dacă k este rădăcina arborelui (caz în care nu are părinte), respectiv -1 dacă k este descendent stâng al lui Tata[k] sau 1 dacă k este descendent drept al lui Tata[k].</p>
+    <img src="https://www.pbinfo.ro/resurse/9dc152/articole/arbori-binari/arbore-binar-1.png" alt="Reprezentarea prin referințe ascendente">
+
+    <h3 id="reprezentare-descendente">Reprezentarea prin referințe descendente</h3>
+    <p>În cazul reprezentării prin referințe descendente, trebuie să fie cunoscută rădăcina arborelui binar, iar pentru celelalte noduri din arbore, trebuie să se cunoască fiul stâng și fiul drept.</p>
+    <p>Această reprezentare se poate face cu ajutorul tablourilor sau prin intermediul alocării dinamice.</p>
+    <h4>Reprezentarea cu tablouri</h4>
+    <p>Dacă folosim tablouri, vom avea nevoie de două tablouri, st[] (de la stânga) și dr[] (de la dreapta). Considerând nodurile numerotate de la 1 la n:</p>
+    <ul type="square">
+      <li>st[k] reprezintă numărul de ordine al nodului care este descendent stâng al lui k, sau 0 dacă k nu are descendent stâng;</li>
+      <li>dr[k] reprezintă numărul de ordine al nodului care este descendent drept al lui k, sau 0 dacă k nu are descendent drept.</li>
+    </ul>
+    <img src="https://www.pbinfo.ro/resurse/9dc152/articole/arbori-binari/arbore-binar-1.png" alt="Reprezentarea cu tablouri">
+
+    <h4>Reprezentarea folosind alocarea dinamică</h4>
+    <p>Vom folosi următoarea structură de date:</p>
+    <pre>
+      <code>
+      struct Nod {<br>
+      int info;<br>
+      Nod *st, *dr;<br>
+      };
+      </code>
+    </pre>
+    <img src="https://www.pbinfo.ro/resurse/9dc152/articole/arbori-binari/arbore-binar-1.png" alt="Reprezentarea folosind alocarea dinamică">
+    <hr>
+</div>
+</body>
+</html>

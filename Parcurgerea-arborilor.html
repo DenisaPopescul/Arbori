@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcurgerea Arborilor - Arbori Binari</title>
+</head>
+<body>
+<header class="header">
+  <a href="index.html" class="arbori">Arbori</a>
+  <nav class="navbar">
+    <a href="Definiție-și- proprietăți.html">Definiție și proprietăți</a>
+    <a href="Tipuri-de-arbori.html">Tipuri de arbori</a>
+    <a href="Reprezentarea-arborilor-binari.html">Reprezentarea arborilor binari</a>
+    <a href="Parcurgerea-arborilor.html">Parcurgerea arborilor</a>
+  </nav>
+</header>
+<div class="content">
+    <hr>
+    <h2 id="parcurgerea">Parcurgerea arborilor</h2>
+    <p>Parcurgerea unui arbore binar presupune vizitarea fiecărui nod o singură dată, urmând o anumită ordine.</p>
+    <h3 id="inordine"><br>Parcurgerea în inordine</br></h3>
+    <p>Parcurgerea în inordine (inorder traversal) constă în parcurgerea subarborelui stâng, vizitarea rădăcinii și parcurgerea subarborelui drept.</p>
+    <pre>
+      <code>
+      void parcurgere_inordine(Nod *radacina) {<br>
+      if (radacina != nullptr) {<br>
+      parcurgere_inordine(radacina->st);<br>
+      std::cout << radacina->info << " ";<br>
+      parcurgere_inordine(radacina->dr);<br>
+      }<br>
+      }
+      </code>
+    </pre>
+    <h3 id="preordine">Parcurgerea în preordine</h3>
+    <p>Parcurgerea în preordine (preorder traversal) constă în vizitarea rădăcinii, parcurgerea subarborelui stâng și parcurgerea subarborelui drept.</p>
+    <pre>
+      <code>
+      void parcurgere_preordine(Nod *radacina) {<br>
+      if (radacina != nullptr) {<br>
+      std::cout << radacina->info << " ";<br>
+      parcurgere_preordine(radacina->st);<br>
+      parcurgere_preordine(radacina->dr);<br>
+      }<br>
+      }
+      </code>
+    </pre>
+    <h3 id="postordine">Parcurgerea în postordine</h3>
+    <p>Parcurgerea în postordine (postorder traversal) constă în parcurgerea subarborelui stâng, parcurgerea subarborelui drept și vizitarea rădăcinii.</p>
+    <pre>
+      <code>
+      void parcurgere_postordine(Nod *radacina) {<br>
+      if (radacina != nullptr) {<br>
+      parcurgere_postordine(radacina->st);<br>
+      parcurgere_postordine(radacina->dr);<br>
+      std::cout << radacina->info << " ";<br>
+      }<br>
+      }
+      </code>
+    </pre>
+  <hr>
+</div>
+</body>
+</html>
