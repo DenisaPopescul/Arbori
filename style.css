@@ -82,6 +82,7 @@ nav {
   background: rgba(0, 0, 0, 0.6); /* pentru a face textul mai lizibil pe fundal */
   border-radius: 10px;
 }
-img{
+img {
   background-color: white;
+  color: white;
 }
